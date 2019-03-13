@@ -1,4 +1,4 @@
-resource "aws_vpc_dhcp_options" "shaandhcp" {
+resource "aws_vpc_dhcp_options" "tftdhcp" {
     domain_name = "${var.DnsZoneName}"
     domain_name_servers = ["AmazonProvidedDNS"]
     tags {
@@ -8,7 +8,7 @@ resource "aws_vpc_dhcp_options" "shaandhcp" {
 
 resource "aws_vpc_dhcp_options_association" "dns_resolver" {
     vpc_id = "${aws_vpc.terraformmain.id}"
-    dhcp_options_id = "${aws_vpc_dhcp_options.shaandhcp.id}"
+    dhcp_options_id = "${aws_vpc_dhcp_options.tftdhcp.id}"
 }
 
 /* DNS PART ZONE AND RECORDS */

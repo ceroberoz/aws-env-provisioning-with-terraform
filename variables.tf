@@ -1,12 +1,11 @@
 variable "region" {
-  default = "eu-west-2"
+  default = "us-east-1"
 }
 variable "AmiLinux" {
   type = "map"
   default = {
-    eu-west-2 = "ami-a36f8dc4"
-    eu-west-1 = "ami-ca0135b3"
-    us-east-1 = "ami-14c5486b"
+    us-east-1 = "ami-0a313d6098716f372"
+    us-east-2 = "ami-0c55b159cbfafe1f0"
   }
 }
 
@@ -36,6 +35,6 @@ variable "key_name" {
   description = "the ssh key to use in the EC2 machines"
 }
 variable "DnsZoneName" {
-  default = "ShaanAWSDNS.internal"
+  default = "thefthing.internal"
   description = "the internal dns name"
 }
